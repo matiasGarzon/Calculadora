@@ -8,5 +8,6 @@ public class CalculadoraEjecutable {
         CalculadoraGui calcu = new CalculadoraGui();
         calcu.setVisible(true);
         calcu.setLocationRelativeTo(null);
+        Metodos metodos =new Metodos ();
     }
 }
