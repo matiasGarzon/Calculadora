@@ -100,19 +100,19 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="btnDividir" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
-                                      <Component id="btnPor" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
                                       <Component id="btnMenos" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
+                                      <Component id="btnPor" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
                                       <Component id="btnMas" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="btn12" min="-2" pref="69" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                  <Component id="btn11" min="-2" pref="69" max="-2" attributes="0"/>
+                                  <Component id="btnCe" min="-2" pref="69" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="btn10" min="-2" pref="69" max="-2" attributes="0"/>
+                                  <Component id="btnC" min="-2" pref="69" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="btnMas1" min="-2" pref="69" max="-2" attributes="0"/>
+                                  <Component id="btnBorrar" min="-2" pref="69" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -131,9 +131,9 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btn12" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                      <Component id="btn11" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                      <Component id="btn10" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                      <Component id="btnMas1" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                      <Component id="btnCe" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                      <Component id="btnC" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                      <Component id="btnBorrar" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="18" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -147,14 +147,14 @@
                       <Component id="btn4" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                       <Component id="btn5" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                       <Component id="btn6" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                      <Component id="btnMenos" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                      <Component id="btnPor" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btn1" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                       <Component id="btn2" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                       <Component id="btn3" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                      <Component id="btnPor" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                      <Component id="btnMenos" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -211,12 +211,12 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMasActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnMenos">
+        <Component class="javax.swing.JButton" name="btnPor">
           <Properties>
             <Property name="text" type="java.lang.String" value="X"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMenosActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPorActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn6">
@@ -267,7 +267,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn3ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnPor">
+        <Component class="javax.swing.JButton" name="btnMenos">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="24" style="0"/>
@@ -275,7 +275,7 @@
             <Property name="text" type="java.lang.String" value="-"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPorActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMenosActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnDividir">
@@ -316,28 +316,28 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnComaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btn10">
+        <Component class="javax.swing.JButton" name="btnC">
           <Properties>
             <Property name="text" type="java.lang.String" value="C"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn10ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnMas1">
+        <Component class="javax.swing.JButton" name="btnBorrar">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x232b;"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMas1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBorrarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btn11">
+        <Component class="javax.swing.JButton" name="btnCe">
           <Properties>
             <Property name="text" type="java.lang.String" value="CE"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn11ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCeActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn12">

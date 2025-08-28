@@ -8,15 +8,32 @@ public class Metodos {
      public void agregar(String entrada) {
         expresion.append(entrada);
     }
+     
+     public void agregarOperador(char operador){
+         char ultimo= expresion.charAt(expresion.length()-1);
+         if(expresion.length()==0){
+             if(operador=='X' || operador=='÷')return;
+         }else
+             if(!esOperador(ultimo)&& ultimo!='(' && ultimo!= '.'){
+                 expresion.append(operador);
+             }
+         
+     }
      public void reiniciar() {
         expresion.setLength(0);
     }
+     
+     public void borrarUltimo(){
+         if(expresion.length()>0){
+             expresion.deleteCharAt(expresion.length()-1);
+         }
+     }
 
     public String getExpresion() {
         return expresion.toString();
     }
     private boolean esOperador(char c) {
-        return c == '+' || c == '-' || c == '*' || c == '/';
+        return c == '+' || c == '-' || c == 'X' || c == '÷';
     }
 
     private int precedencia(char op) {
@@ -24,8 +41,8 @@ public class Metodos {
             case '+':
             case '-':
                 return 1;
-            case '*':
-            case '/':
+            case 'X':
+            case '÷':
                 return 2;
             default:
                 return 0;
@@ -79,8 +96,8 @@ public class Metodos {
                 switch (token.charAt(0)) {
                     case '+': pila.push(a + b); break;
                     case '-': pila.push(a - b); break;
-                    case '*': pila.push(a * b); break;
-                    case '/':
+                    case 'X': pila.push(a * b); break;
+                    case '÷':
                         if (b == 0) throw new ArithmeticException("División por cero");
                         pila.push(a / b); break;
                 }
