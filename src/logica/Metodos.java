@@ -21,7 +21,7 @@ public class Metodos {
         
         current.append(entrada); // Se agrega un numero al current
     }
-
+    
     public void agregarOperador(char operador) {
         /*char ultimo = current.charAt(current.length() - 1);
         if (current.length() == 0) {
@@ -76,7 +76,7 @@ public class Metodos {
     }
 
     private boolean esOperador(char c) {
-        return c == '+' || c == '-' || c == 'X' || c == '÷' || c== '=';
+        return c == '+' || c == '-' || c == 'X' || c == '÷' || c== '=' || c == '(' || c == ')';
     }
 
     private int precedencia(char op) {

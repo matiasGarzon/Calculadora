@@ -1,11 +1,12 @@
 
 package logica;
 
-import calculadoraGui.CalculadoraGui;
+import calculadoraGui.CalculadoraGUI;
+
 
 public class CalculadoraEjecutable {
     public static void main(String[] args) {
-        CalculadoraGui calcu = new CalculadoraGui();
+        CalculadoraGUI calcu = new CalculadoraGUI();
         calcu.setVisible(true);
         calcu.setLocationRelativeTo(null);
         Metodos metodos =new Metodos ();
