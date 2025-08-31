@@ -48,8 +48,16 @@ public class Metodos {
         
         
         
-        
 
+    }
+    
+    public void agregarParentesis(String parentesis){
+        if(parentesis.equals(")")){
+            expresion.append(current.toString());
+            calcularResultado();
+            reiniciarCurrent();
+        }
+        expresion.append(parentesis);
     }
 
     public void reiniciarCurrent() {
@@ -76,7 +84,7 @@ public class Metodos {
     }
 
     private boolean esOperador(char c) {
-        return c == '+' || c == '-' || c == 'X' || c == '÷' || c== '=' || c == '(' || c == ')';
+        return c == '+' || c == '-' || c == 'X' || c == '÷' || c== '=';
     }
 
     private int precedencia(char op) {
