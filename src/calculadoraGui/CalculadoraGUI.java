@@ -286,13 +286,13 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         });
 
         panelEscrituraArriba.setBackground(new java.awt.Color(51, 51, 51));
-        panelEscrituraArriba.setForeground(new java.awt.Color(255, 255, 255));
+        panelEscrituraArriba.setForeground(new java.awt.Color(204, 204, 204));
         panelEscrituraArriba.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         panelEscrituraArriba.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         panelEscrituraArriba.setOpaque(true);
 
         panelEscrituraAbajo.setBackground(new java.awt.Color(51, 51, 51));
-        panelEscrituraAbajo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        panelEscrituraAbajo.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         panelEscrituraAbajo.setForeground(new java.awt.Color(255, 255, 255));
         panelEscrituraAbajo.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         panelEscrituraAbajo.setText("0  ");
