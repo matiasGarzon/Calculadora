@@ -48,7 +48,7 @@ public class Metodos {
         
         
         
-
+        
     }
     
     public void agregarParentesis(String parentesis){
@@ -59,16 +59,16 @@ public class Metodos {
         }
         expresion.append(parentesis);
     }
-
+    
     public void reiniciarCurrent() {
         current.setLength(0);
     }
     
     public void reiniciarTodo() {
-        expresion.setLength(0);
+        expresion.setLength(0);        
         current.setLength(0);
     }
-
+    
     public void borrarUltimo() {
         if (current.length() > 0) {
             current.deleteCharAt(current.length() - 1);
@@ -175,7 +175,7 @@ public class Metodos {
         try {
             double resultado = evaluarExpresion(expresion.toString());
             current.setLength(0);
-            current.append(resultado);
+                current.append(resultado);
             return String.valueOf(resultado);
         } catch (Exception e) {
             current.setLength(0);
