@@ -32,7 +32,7 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         }
         
         JButton[] botonesOperadores = {
-            btnMas, btnMenos, btnPor, btnDividir, btnIgual
+            btnMas, btnMenos, btnPor, btnDividir, /*btnIgual*/
         };
         
         for(JButton boton : botonesOperadores) {
@@ -42,9 +42,10 @@ public class CalculadoraGUI extends javax.swing.JFrame {
                metodos.agregarOperador(operador);
                panelEscrituraArriba.setText(metodos.getExpresion());
                panelEscrituraAbajo.setText(metodos.getCurrent());
-               
             });
         }
+        
+        
         JButton[] botonesParentesis= {
             btnParentesisApertura,btnParentesisCierre
         };
@@ -466,7 +467,9 @@ public class CalculadoraGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDividirActionPerformed
 
     private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
-        /*panelEscrituraAbajo.setText( metodos.calcularResultado());*/
+        metodos.signoIgual();
+        panelEscrituraArriba.setText(metodos.getExpresion());
+        panelEscrituraAbajo.setText(metodos.getCurrent());
     }//GEN-LAST:event_btnIgualActionPerformed
 
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
