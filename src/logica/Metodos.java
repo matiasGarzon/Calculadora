@@ -69,11 +69,12 @@ public class Metodos {
             balanceParentesis--;                
         } else {
             balanceParentesis++;
-            if (!ultimoEsOperador) {
+            if (!ultimoEsOperador && current.toString() != "") {
                 agregarOperador('X');
             }
         }
         expresion.append(parentesis);
+        ultimoEsOperador = false;
     }
     
     public void reiniciarCurrent() {
