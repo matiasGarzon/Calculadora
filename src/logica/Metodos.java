@@ -7,6 +7,7 @@ public class Metodos {
     private StringBuilder expresion = new StringBuilder(); // Guarda lo que hay en el label de arriba
     private StringBuilder current = new StringBuilder(); // Guarda lo que hay en el label de abajo
     private boolean ultimoEsOperador = false; // bandera
+    private int balanceParentesis = 0;
 
     public void agregarNumero(String entrada) {
         if (ultimoEsOperador) {
@@ -23,39 +24,54 @@ public class Metodos {
     }
     
     public void agregarOperador(char operador) {
-        /*char ultimo = current.charAt(current.length() - 1);
-        if (current.length() == 0) {
-            if (operador == 'X' || operador == '÷') {
-                return;
-            }
-        } else if (!esOperador(ultimo) && ultimo != '(' && ultimo != '.') {
-            expresion.append(current.toString()+operador);
-        }*/
-        
         
         if (!esOperador(operador)) return; // Si recibe algo que no es operador no sigue ejecutando
+        
+        //en el caso que lo primero en ingresar sea un operador
+        if (expresion.length() == 0 && current.length() == 0) {
+            expresion.append("0"); // arriba pone 0 antes del operador
+        }
         
         if (ultimoEsOperador) {
             expresion.setLength(expresion.length()-1); // Si se presiona un operador y lo ultimo tambien habia sido operador, se lo elimina para reemplazarlo
         } else {
             expresion.append(current.toString()); // Se sube lo que habia en el current
-            calcularResultado(); // Se calcula el resultado parcial
-            
+            calcularResultado(); // Se calcula el resultado parcial            
         }
         
         expresion.append(operador); // Se agrega el operador a la expresion
         ultimoEsOperador = true; //Se actualiza la bandera
+    }
+    
+    public void signoIgual() {
+        if (ultimoEsOperador) {
+            expresion.setLength(expresion.length()-1); // Si se presiona un operador y lo ultimo tambien habia sido operador, se lo elimina para reemplazarlo
+        } else {
+            expresion.append(current.toString()); // Se sube lo que habia en el current
+        }
         
+        while(balanceParentesis > 0){
+            current.setLength(0);
+            agregarParentesis(")");
+        }
         
-        
-        
+        calcularResultado(); // Se calcula el resultado
+        expresion.append('=');
     }
     
     public void agregarParentesis(String parentesis){
         if(parentesis.equals(")")){
+            if (balanceParentesis <= 0) return;
+            
             expresion.append(current.toString());
             calcularResultado();
             reiniciarCurrent();
+            balanceParentesis--;                
+        } else {
+            balanceParentesis++;
+            if (!ultimoEsOperador) {
+                agregarOperador('X');
+            }
         }
         expresion.append(parentesis);
     }
@@ -67,6 +83,7 @@ public class Metodos {
     public void reiniciarTodo() {
         expresion.setLength(0);        
         current.setLength(0);
+        balanceParentesis = 0;
     }
     
     public void borrarUltimo() {
@@ -175,10 +192,15 @@ public class Metodos {
         try {
             double resultado = evaluarExpresion(expresion.toString());
             current.setLength(0);
+            if (resultado == (long) resultado) {
+                current.append((long) resultado);
+            } else {
                 current.append(resultado);
+            }
             return String.valueOf(resultado);
         } catch (Exception e) {
             current.setLength(0);
+            current.append("Error");
             return "Error";
         }
     }
