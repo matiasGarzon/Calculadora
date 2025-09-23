@@ -72,6 +72,7 @@ public class Metodos {
             if (!ultimoEsOperador && current.toString() != "") {
                 agregarOperador('X');
             }
+            reiniciarCurrent();
         }
         expresion.append(parentesis);
         ultimoEsOperador = false;
@@ -189,7 +190,7 @@ public class Metodos {
         return evaluarPostfija(convertirAPostfija(expr));
     }
 
-    public String calcularResultado() {
+    public void calcularResultado() {
         try {
             double resultado = evaluarExpresion(expresion.toString());
             current.setLength(0);
@@ -198,11 +199,11 @@ public class Metodos {
             } else {
                 current.append(resultado);
             }
-            return String.valueOf(resultado);
+           
         } catch (Exception e) {
             current.setLength(0);
             current.append("Error");
-            return "Error";
+          
         }
     }
 
